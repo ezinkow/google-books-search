@@ -16,7 +16,7 @@ const useStyles = makeStyles({
         width: '100%',
     },
     container: {
-        maxHeight: 500,
+        maxHeight: 10000000,
     },
 })
 
@@ -26,8 +26,7 @@ export default function BookList({ apiResponse }) {
     if (apiResponse) {
         return (
             <>
-                <Grid item xs={1}></Grid>
-                <Grid item xs={10}>
+                <Grid item xs={12}>
                     <Paper className={classes.root}>
                         <TableContainer className={classes.container}>
                             <Table stickyHeader size="small" aria-label="book table">
@@ -42,16 +41,36 @@ export default function BookList({ apiResponse }) {
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                {apiResponse.map(book =>
-                                    <p>{book.volumeInfo.title}</p>
-                                )}
+                                    {apiResponse.map(book => (
+                                        <TableRow key={book.accessInfo.id}>
+                                            <TableCell component="th" scope="row">
+                                                <p>{book.volumeInfo.title}</p>
+                                            </TableCell>
+                                            <TableCell component="th" scope="row">
+                                                <p>{book.volumeInfo.authors.join(", ")}</p>
+                                                {/* {book.map(author =>
+                                                <p>{author.authors}</p>
+                                                    )} */}
+                                            </TableCell>
+                                            <TableCell component="th" scope="row">
+                                                <p>{book.volumeInfo.description}</p>
+                                            </TableCell>
+                                            <TableCell component="th" scope="row">
+                                                <img src={book.volumeInfo.imageLinks.smallThumbnail}/>
+                                            </TableCell>
+                                            <TableCell component="th" scope="row">
+                                                <a href={book.volumeInfo.infoLink}>Link</a>
+                                            </TableCell>
+                                            <TableCell component="th" scope="row">
+                                                <button>Add book to database</button>
+                                            </TableCell>
+                                        </TableRow>
+                                    ))}
                                 </TableBody>
                             </Table>
                         </TableContainer>
                     </Paper>
                 </Grid>
-                <Grid item xs={1}></Grid>
-                test
             </>
         )
     } else {

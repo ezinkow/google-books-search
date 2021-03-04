@@ -4,7 +4,7 @@ import SearchForm from './components/SearchForm'
 import BookList from './components/BookList'
 
 export default function BooksApp() {
-  const [bookSearch, setBookSearch] = useState("")
+  const [bookSearch, setBookSearch] = useState()
   const [apiResponse, setApiResponse] = useState()
 
   const handleSearch = event => {
