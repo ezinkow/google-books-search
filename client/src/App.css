@@ -2,3 +2,11 @@
   text-align: center;
   margin: 10px 50px 0px 50px;
 }
+
+button {
+  margin: 5px
+}
+
+input {
+  margin: 5px
+}
