@@ -10,14 +10,19 @@ router.get('/books', function (req, res) {
     });
 });
 
-// router.post('/todos', function (req, res) {
-//   db.Todo.create({
-//     name: req.body.name,
-//   })
-//     .then((todo) => {
-//       console.log(todo);
-//       res.send(todo);
-//     });
-// });
+router.post('/books', function ({body}, res) {
+  Book.create({
+    id: body.id,
+    title: body.title,
+    authors: body.authors,
+    description: body.description,
+    image: body.image,
+    link: body.link
+  })
+    .then((book) => {
+      console.log(book);
+      res.send(book);
+    });
+});
 
 module.exports = router;

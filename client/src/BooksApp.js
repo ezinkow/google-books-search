@@ -14,7 +14,7 @@ export default function BooksApp() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     const apiKey ='AIzaSyBiRAp_gwEMeGdVrexvBfEnvJYmBC0iUEk'
-    const apiCall = `https://www.googleapis.com/books/v1/volumes?q=${bookSearch}&key=${apiKey}`
+    const apiCall = `https://www.googleapis.com/books/v1/volumes?q=${bookSearch}&maxResults=20&printType=books&key=${apiKey}`
     
     try {
       const response = await fetch(apiCall)
@@ -24,7 +24,7 @@ export default function BooksApp() {
     } catch (err) {
       console.log(err)
     }
-    setBookSearch("")
+    //  await setBookSearch("")
   }
   useEffect(() => {
     console.log('apiresponse', apiResponse)
