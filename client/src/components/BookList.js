@@ -32,11 +32,11 @@ export default function BookList({ apiResponse }) {
         console.log('found', foundBook)
         // const updateSavedBook = savedBook.slice()
         // updateSavedBook.push(foundBook)
-        let authorsObj = foundBook.volumeInfo.authors.join(', ')
+        let authorsString = foundBook.volumeInfo.authors.join(', ')
         const bookObject = {
             id: foundBook.id,
             title: foundBook.volumeInfo.title,
-            authors: authorsObj,
+            authors: authorsString,
             description: foundBook.volumeInfo.description,
             image: foundBook.volumeInfo.imageLinks.smallThumbnail,
             link: foundBook.volumeInfo.infoLink,
@@ -49,7 +49,6 @@ export default function BookList({ apiResponse }) {
 
     if (apiResponse) {
         return (
-            <>
                 <Grid item xs={12}>
                     <Paper className={classes.root}>
                         <TableContainer className={classes.container}>
@@ -95,7 +94,6 @@ export default function BookList({ apiResponse }) {
                         </TableContainer>
                     </Paper>
                 </Grid>
-            </>
         )
     } else {
         return (

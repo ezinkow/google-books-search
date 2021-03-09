@@ -17,7 +17,15 @@ if (environment === 'production') {
 // Add routes, both API and view
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true });
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/googlebooks',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
 // Start the API server
 
