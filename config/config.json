@@ -9,14 +9,14 @@
   "test": {
     "username": "root",
     "password": "password",
-    "database": "database_test",
+    "database": "googlebooks",
     "host": "127.0.0.1",
     "dialect": "mongo"
   },
   "production": {
     "username": "root",
     "password": "password",
-    "database": "database_production",
+    "database": "googlebooks",
     "host": "127.0.0.1",
     "dialect": "mongo"
   }
