@@ -18,31 +18,32 @@ if (process.env.NODE_ENV === 'production') {
 // Add routes, both API and view
 app.use(routes);
 
-if (process.env.NODE_ENV === "production") {
-  mongoose.connect(process.env.MONGODB_URI,  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  });
-} else {
-  mongoose.connect("mongodb+srv://admin:Password1@cluster0.zrvnu.mongodb.net/googlebooks?retryWrites=true&w=majority",  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  });
-}
-
-// mongoose.connect(
-//   process.env.MONGODB_URI || 'mongodb://localhost/googlebooks',
-//   {
+// if (process.env.NODE_ENV === "production") {
+//   mongoose.connect(process.env.MONGODB_URI,  {
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true,
 //     useCreateIndex: true,
 //     useFindAndModify: false
-//   }
-// );
+//   });
+// } else {
+//   mongoose.connect("mongodb+srv://admin:Password1@cluster0.zrvnu.mongodb.net/googlebooks?retryWrites=true&w=majority",  {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useCreateIndex: true,
+//     useFindAndModify: false
+//   });
+// }
+
+mongoose.connect(
+  process.env.MONGODB_URI,
+  // || 'mongodb://localhost/googlebooks',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
 // Start the API server
 

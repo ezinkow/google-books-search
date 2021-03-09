@@ -1,21 +1,21 @@
 {
   "development": {
-    "username": "root",
-    "password": "password",
+    "username": "admin",
+    "password": "Password1",
     "database": "googlebooks",
     "host": "127.0.0.1",
     "dialect": "mongo"
   },
   "test": {
-    "username": "root",
-    "password": "password",
+    "username": "admin",
+    "password": "Password1",
     "database": "googlebooks",
     "host": "127.0.0.1",
     "dialect": "mongo"
   },
   "production": {
-    "username": "root",
-    "password": "password",
+    "username": "admin",
+    "password": "Password1",
     "database": "googlebooks",
     "host": "127.0.0.1",
     "dialect": "mongo"
