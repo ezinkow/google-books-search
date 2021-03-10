@@ -44,7 +44,7 @@ export default function SavedBooks({ books }) {
                                 <TableCell align="center">Description</TableCell>
                                 <TableCell align="center">Image</TableCell>
                                 <TableCell align="center">Link</TableCell>
-                                <TableCell align="center">Add to Database</TableCell>
+                                <TableCell align="center">Delete</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>

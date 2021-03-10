@@ -34,7 +34,7 @@ export default function BooksApp() {
     } catch (err) {
       console.log(err)
     }
-    //  await setBookSearch("")
+     setBookSearch("")
   }
   useEffect(() => {
     console.log('apiresponse', apiResponse)
