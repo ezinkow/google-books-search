@@ -8,7 +8,7 @@ https://young-everglades-62991.herokuapp.com/
 
 ## About This Project:
 
-This was a homework assignment as part of the Northwestern Coding Bootcamp to build an application that uses the Google Books Api to search the api and save books to a database.
+This application uses the Google Books Api to search the api and save books to a database.
 
 This was built with React.
 
